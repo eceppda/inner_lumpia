@@ -1,7 +1,7 @@
 import unittest
 from couchdb import client
 from couchdb.design import ViewDefinition
-from documents.user import User
+from inner_lumpia.models.user import User
 from tests import testutil
 
 
