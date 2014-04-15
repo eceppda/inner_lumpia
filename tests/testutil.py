@@ -10,13 +10,20 @@ import random
 import sys
 from couchdb import client
 
+
 class TempDatabaseMixin(object):
 
     temp_dbs = None
     _db = None
 
     def setUp(self):
+        auth = open('../.couch_auth', 'r')
+        auth_pair = auth.readline()
+        auth_pair = auth_pair.split(':')
+        username = auth_pair[0]
+        password = auth_pair[1]
         self.server = client.Server(full_commit=False)
+        self.server.resource.credentials = (username, password)
 
     def tearDown(self):
         if self.temp_dbs:

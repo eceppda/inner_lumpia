@@ -8,6 +8,7 @@ if __name__ == '__main__':
     config.add_route('hello', '/howdy')
     config.add_route('redirect', '/goto')
     config.add_route('exception', '/problem')
+    config.add_static_view(name='static', path='static')
     config.scan('views')
     config.include('pyramid_chameleon')
     app = config.make_wsgi_app()

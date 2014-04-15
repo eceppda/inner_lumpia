@@ -3,6 +3,11 @@ from pyramid.response import Response
 from pyramid.view import view_config
 
 
+@view_config(route_name='hello_json', renderer='json')
+def hello_json(request):
+    return [1, 2, 3]
+
+
 # First view, available at http://localhost:6543/
 @view_config(route_name='home')
 def home_view(request):
