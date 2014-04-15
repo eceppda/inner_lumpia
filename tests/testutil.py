@@ -3,8 +3,6 @@
 # Copyright (C) 2007-2009 Christopher Lenz
 # All rights reserved.
 #
-# This software is licensed as described in the file COPYING, which
-# you should have received as part of this distribution.
 
 import random
 import sys

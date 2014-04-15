@@ -23,8 +23,16 @@ class ServerTestCase(testutil.TempDatabaseMixin, unittest.TestCase):
         self.assertIsNotNone(self.db)
 
     def test_user_view(self):
-        user1 = User('aaa', 'aaa', 'aaa@one.com')
-        user2 = User('bbb', 'bbb', 'bbb@one.com')
+        user1 = User()
+        user1.username = 'aaa'
+        user1.password = 'aaa'
+        user1.email = 'aaa@one.com'
+        user1.type = 'User'
+        user2 = User()
+        user2.username = 'bbb'
+        user2.password = 'bbb'
+        user2.email = 'bbb@one.com'
+        user2.type = 'User'
         user1.store(self.db)
         user2.store(self.db)
         assert user1.id is not None
