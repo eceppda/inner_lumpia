@@ -12,6 +12,7 @@ class User(Document):
     password = TextField()
     email = TextField()
 
+    # TODO - change this back to a python view
     by_name = ViewField('users', '''
         function(doc) {
             if(doc.type !== null && doc.type == "User")
